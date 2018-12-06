@@ -153,7 +153,8 @@
                 <p class="right-corner" style="font-size: 1rem; font-weight: bold">$<%= room.cost_per_night %>/night </p>
                 <h5 style="font-weight: bold; text-overflow: ellipsis; white-space: nowrap;
                 overflow: hidden;"><%= room.room_name %></h5>
-                <li>Address: <%= room.address %></li>
+                <li style="text-overflow: ellipsis; white-space: nowrap;
+                overflow: hidden;">Address: <%= room.address %></li>
                 <li>Contact: <%= room.contact_host %></li>
                 <li>Reviews: <%= room.ratings.count %></li>
                  <!--to fix-->
