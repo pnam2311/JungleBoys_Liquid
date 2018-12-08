@@ -117,7 +117,7 @@
             <!--<div class="form-group" style="width:100%">-->
                 <%= f.hidden_field :user_id, value: current_user.id %>
                 <%= f.hidden_field :room_id, value: @room.id %>
-                <%= f.text_field :text_content, :class => "comment-box form-control", 
+                <%= f.text_area :text_content, rows: 1, :class => "comment-box form-control", 
                     :required => true,:style=> "flex-grow: 1", :autocomplete => 'off', placeholder: "Write a review" %>
                     <%= f.fields_for :rating, Rating.new do |rating_form| %>
                     <p>

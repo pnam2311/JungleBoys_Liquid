@@ -31,7 +31,7 @@
         </div>
     </div>
 
-    <p class="offset-md-1" id="comment_content"><%= comment.text_content %></p>
+    <p class="offset-md-1" id="comment_content" style="white-space: pre-line;"><%= comment.text_content %></p>
 
     <!-- check to load form--> 
     <% if user_signed_in? %>    
@@ -51,7 +51,7 @@
                 <%= f.hidden_field :user_id, value: current_user.id %>
                 <%= f.hidden_field :parent_id, value: comment.id %>
                 <%= f.hidden_field :room_id, value: comment.room.id %>
-                <%= f.text_field :text_content, :class => "comment-box form-control", :style=>"width:50%",
+                <%= f.text_area :text_content, rows: 1, :class => "comment-box form-control", :style=>"width:50%",
                     :required => true, :autocomplete => 'off', placeholder: "Reply" %>
                     
                 <%= f.submit "Reply", id: "reply_submit", class: "btn btn-primary" %>

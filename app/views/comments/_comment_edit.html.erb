@@ -1,6 +1,6 @@
 <!--<div id="comment_<%= comment.id %>" class="comment">-->
 <div class="row">
-<div class="col-md-1">
+<div class="col-md-1" style="flex-grow: 1">
     <% if comment.user.user_pic.present? %>
         <%= image_tag(comment.user.user_pic, :height=>'50px', :width=>'50px', :style => 'border-radius: 50%') %>
     <% else %>
@@ -13,8 +13,8 @@
         <div class="form-group" style="width:100%">
             <%= f.hidden_field :id, value: comment.id %>
             <%= f.hidden_field :room_id, value: comment.room.id %>
-            <%= f.text_field :text_content, :class => "comment-box form-control", :style=>"width:50%",
-                :required => true, :autocomplete => 'off', placeholder: "Edit comment" %>
+            <%= f.text_area :text_content, rows: 1, :class => "comment-box form-control",
+                :required => true, :style=> "flex-grow: 1", :autocomplete => 'off', placeholder: "Edit comment" %>
             <%= f.fields_for :rating, update_ratings_path do |rating_form| %>
                 <p>
                     <%= rating_form.hidden_field :id, value: comment.rating.id %>
@@ -34,6 +34,11 @@
             <p id="value"></p>    
 
             <%= f.submit "Edit", id: "submit", class: "btn btn-primary" %>
+            <%= link_to room_comment_cancel_path(comment.room_id,comment), remote:true do %>
+                <button type="button" class="btn btn-danger">
+                    Cancel
+                </button>
+            <% end %>
         </div>
     <% end %>
     </div>

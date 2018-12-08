@@ -14,7 +14,7 @@
                 <%= comment.user.username %>
             </a>
             <%= comment.created_at %>
-            <p><%= comment.text_content %></p>
+            <p style="white-space: pre-line;"><%= comment.text_content %></p>
         </div>
         <div class="col-md-2">
             <% if user_signed_in? && current_user.id == comment.user_id %>

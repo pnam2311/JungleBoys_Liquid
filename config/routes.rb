@@ -9,8 +9,10 @@ Rails.application.routes.draw do
   
   resources :rooms, :except => [:index] do 
     resources :comments, :except => [:index] do
-        resources :likes, only: [:create, :destroy], shallow: true
+      resources :likes, only: [:create, :destroy], shallow: true
+      get ':id/cancel', as: 'cancel', action: 'cancel',  controller: 'comments'
     end
+    
     resources :bookmarks, only: [:create, :destroy], shallow: true
   end
   

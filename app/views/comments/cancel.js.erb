@@ -1,0 +1,7 @@
+<% if @comment.parent_id == nil %>
+$('#comment_<%= @comment.id %>')
+.replaceWith("<%= escape_javascript(render partial: 'comment', locals: {comment: @comment}) %>");
+<% else %>
+$('#reply_<%= @comment.parent_id %>_<%= @comment.id %>')
+.replaceWith("<%= escape_javascript(render partial: 'reply', locals: {comment: @comment}) %>");
+<% end %>

@@ -47,6 +47,14 @@ class CommentsController < ApplicationController
             end
         end
     end
+    
+    def cancel
+        @comment = Comment.find(params[:id])
+        respond_to do |format|
+            format.js {}
+        end
+    end
+    
     private
     def post_params
         params.require(:comment).permit(:room_id, :parent_id, :user_id, :text_content,

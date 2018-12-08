@@ -13,9 +13,14 @@
 <%= form_for [comment.room, comment], method: :patch, html: {class: "form-inline"}, remote:true do |f| %>
     <div class="form-group" style="width:100%">
         <%= f.hidden_field :id, value: comment.id %>
-        <%= f.text_field :text_content, :class => "comment-box form-control", :style=>"width:50%",
+        <%= f.text_area :text_content, rows: 1, :class => "comment-box form-control", :style=>"width:50%",
             :required => true, :autocomplete => 'off', placeholder: "Edit comment" %>
         <%= f.submit "Edit", id: "submit", class: "btn btn-primary" %>
+        <%= link_to room_comment_cancel_path(comment.room_id,comment), remote:true do %>
+            <button type="button" class="btn btn-danger">
+                Cancel
+            </button>
+        <% end %>
     </div>
 <% end %>
 </div>
