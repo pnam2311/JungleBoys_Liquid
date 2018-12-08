@@ -7,12 +7,12 @@
       <h4 class="mb-3 text-center">Filter</h4>
       <div class="row">
         <div class="col-md-6 mb-3">
-          <%= f.label :cost_per_night_lteq, "Max cost" %>
-          <%= f.number_field :cost_per_night_lteq, :min => 0, autocomplete: "off", class: "form-control" %>
-        </div>
-        <div class="col-md-6 mb-3">
           <%= f.label :cost_per_night_lteq, "Min cost" %>
           <%= f.number_field :cost_per_night_gteq, :min => 0, autocomplete: "off", class: "form-control" %>
+        </div>
+        <div class="col-md-6 mb-3">
+          <%= f.label :cost_per_night_lteq, "Max cost" %>
+          <%= f.number_field :cost_per_night_lteq, :min => 0, autocomplete: "off", class: "form-control" %>
         </div>
       </div>
 
@@ -34,13 +34,13 @@
     <h4 class="mb-3">Find Rooms</h4>
     <%= sort_link(@q, :cost_per_night) %>
     <%= sort_link(@q, :id) %>
-      
+    
     <div class="row">
       <% @rooms.each do |room| %>
         <div class="col-md-4">
           <div class="card border-0" style="width: 100%;">
             <!--<div class="card-body">-->
-             <%= image_tag(room.pictures[0], :alt=>'Room image', :width=>"100%", :class => "index-room-img") %>
+             <%= link_to image_tag(room.pictures[0], :alt=>'Room image', :width=>"100%", :class => "index-room-img"), room_path(room.id) %>
              <ul class="homepage-info">
                 <p class="right-corner" style="font-size: 1rem; font-weight: bold">$<%= room.cost_per_night %>/night </p>
                 <h5 style="font-weight: bold"><%= room.room_name %></h5>

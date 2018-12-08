@@ -21,7 +21,7 @@ class Room < ApplicationRecord
         Room.left_joins(:ratings)
             .group(:id)
             .order('avg (ratings.stars) desc')
-            .limit(5)
+            .limit(10)
     }
     
     def is_bookmarked user

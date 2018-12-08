@@ -12,11 +12,11 @@
         
         <%= form_for [@comment.room, @comment], html: {class: "form-inline"}, remote:true do |f| %>
             
-        <div class="form-group" style="width:100%">
+        <!--<div class="form-group" style="width:100%">-->
             <%= f.hidden_field :user_id, value: current_user.id %>
             <%= f.hidden_field :room_id, value: @comment.room.id %>
             <%= f.text_field :text_content, :class => "comment-box form-control", 
-                :required => true, :style=> "width: 85%", :autocomplete => 'off', placeholder: "Write a review" %>
+                :required => true, :style=> "flex-grow: 1", :autocomplete => 'off', placeholder: "Write a review" %>
                 <%= f.fields_for :rating, Rating.new do |rating_form| %>
                 <p>
                     <%= rating_form.hidden_field :user_id, value: current_user.id %>
@@ -25,7 +25,7 @@
                 </p>
                 <% end %>
             <%= f.submit "Comment", id: "submit", class: "ml-auto btn btn-primary" %>
-        </div>
+        <!--</div>-->
         <% end %>
     <% end %>
 <% end %>

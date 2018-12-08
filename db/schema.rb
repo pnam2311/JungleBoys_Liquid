@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20181119142713) do
   create_table "rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "user_id",                                       null: false
     t.string  "room_name",       limit: 100,                   null: false
-    t.text    "room_info",       limit: 65535,                 null: false
+    t.string  "room_info",       limit: 5000,                  null: false
     t.string  "province",        limit: 40,                    null: false
     t.string  "address",         limit: 100,                   null: false
     t.integer "cost_per_night",                                null: false

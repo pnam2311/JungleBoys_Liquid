@@ -12,8 +12,10 @@
  *
  *= require_tree .
  *= require_self
+ *= require social-share-button
  */
  @import "bootstrap";
+ @import "social-share-button";
  /*@import "bootstrap-responsive";*/
 html body {
 		background-color: #FAFAFA;
@@ -84,3 +86,13 @@ html body {
     color: #468847;
     text-align: left;
  }
+ 
+ $size: 24px;
+
+.social-share-button {
+  .ssb-icon {
+    background-size: $size $size;
+    height: $size;
+    width: $size;
+  }
+}

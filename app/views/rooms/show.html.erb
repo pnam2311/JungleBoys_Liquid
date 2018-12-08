@@ -86,6 +86,12 @@
             <% end %>
             <!-- -->
         <hr />
+    
+    <% if user_signed_in? %>
+        <div>
+            <%= social_share_button_tag(@room.room_name, :'data-source' => room_path(@room), desc: @room.room_name) %>
+        </div>
+    <% end %>
 
     <h2 id="review_amount">
         <%= parent_comments(@comments).size == 0 ? 
@@ -155,7 +161,7 @@
                     <i class="fas fa-star rated"></i>
                     <% end %>
                 <% end %>
-                <%= number_with_precision(@room.ratings.average(:stars), :precision => 1) %> by <%= @room.ratings.count %> users.
+                <%= number_with_precision(@room.ratings.average(:stars), :precision => 1) %> by <%= @room.ratings.count %> user(s).
                 <% else %>
                 No ratings.
                 <% end %>

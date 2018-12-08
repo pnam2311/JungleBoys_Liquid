@@ -56,7 +56,7 @@
           
           <h4 class="search-title" style="padding-top: 15px;">Or Search a room</h4>
           <%= search_form_for @q, :class => 'form-inline mr-auto' do |f| %>
-            <%= f.search_field :room_name_cont, :class => 'form-control', :style => 'width: 70%;float: left;' %>
+            <%= f.search_field :room_name_cont, :class => 'form-control', :style => 'width: 70%; float: left; color:black;' %>
   
             <%= f.submit "Search", class: 'btn btn-info my-2 my-sm-0', :style => 'width: 30%;float: right;' %>
           <% end %>
@@ -74,7 +74,7 @@
   <div class="owl-carousel owl-theme">
     <% @top.each do |top| %>
       <div class="item card" style="width: 100%;">
-        <%= image_tag(top.pictures[0], :alt=>'Room image', :class => 'index-top-img') %>
+        <%= link_to image_tag(top.pictures[0], :alt=>'Room image', :class => 'index-top-img'), room_path(top.id) %>
         <div class="card-body">
           <h5 class="card-title" style="text-overflow: ellipsis; white-space: nowrap;
                 overflow: hidden;"><%= link_to top.room_name, room_path(top) %></a></h5>
@@ -106,9 +106,7 @@
   <script>
   $(document).ready(function(){
     $('.owl-carousel').owlCarousel({
-      center: true,
       items:5,
-      loop:true,
       autoPlay: 3000
     })
   });
@@ -148,7 +146,7 @@
         <div class="col-md-3">
           <div class="card" style="width: 100%;">
             <!--<div class="card-body">-->
-             <%= image_tag(room.pictures[0], :alt=>'Room image', :width=>"100%", :class => "index-room-img") %>
+             <%= link_to image_tag(room.pictures[0], :alt=>'Room image', :width=>"100%", :class => "index-room-img"), room_path(room.id) %>
              <ul class="homepage-info">
                 <p class="right-corner" style="font-size: 1rem; font-weight: bold">$<%= room.cost_per_night %>/night </p>
                 <h5 style="font-weight: bold; text-overflow: ellipsis; white-space: nowrap;

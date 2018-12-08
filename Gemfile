@@ -65,3 +65,4 @@ group :development do
   gem 'spring'
 end
 
+gem "social-share-button"

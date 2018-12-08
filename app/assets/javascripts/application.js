@@ -14,6 +14,7 @@
 //= require jquery
 //= require turbolinks
 //= require jquery_ujs
+//= require social-share-button
 //= require popper
 //= require bootstrap
 //= require jquery-fileupload/basic

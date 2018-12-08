@@ -259,6 +259,8 @@ GEM
       rdoc (~> 4.0)
     search_cop (1.0.9)
       treetop
+    social-share-button (1.2.0)
+      coffee-rails
     spring (2.0.2)
       activesupport (>= 4.2)
     sprockets (3.7.2)
@@ -323,6 +325,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   search_cop
+  social-share-button
   spring
   sprockets-rails (>= 2.3.2)
   sqlite3
