@@ -82,7 +82,7 @@
             Price: $<%= top.cost_per_night %>/night
           </h6>
           <p style="margin-bottom: 2px;text-overflow: ellipsis; white-space: nowrap;
-                overflow: hidden;">Address: <%= top.address %></p>
+                overflow: hidden;">Address: <%= top.province %></p>
           <p>Reviews: <%= top.ratings.count %></p>
           <p class="card-text">
             <% if !top.ratings.blank? %>
@@ -152,7 +152,7 @@
                 <h5 style="font-weight: bold; text-overflow: ellipsis; white-space: nowrap;
                 overflow: hidden;"><%= room.room_name %></h5>
                 <li style="text-overflow: ellipsis; white-space: nowrap;
-                overflow: hidden;">Address: <%= room.address %></li>
+                overflow: hidden;">Address: <%= room.province %></li>
                 <li>Contact: <%= room.contact_host %></li>
                 <li>Reviews: <%= room.ratings.count %></li>
                  <!--to fix-->
