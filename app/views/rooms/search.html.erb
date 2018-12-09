@@ -46,6 +46,10 @@
             <%= label_tag("Hot water") %>
             <%= f.check_box :amentities_cont_all, { multiple: true }, "Hot water", nil %>
         </div>
+        <div class="col-md-6 mb-3">
+          <%= f.label :cost_per_night_lteq, "Max cost" %>
+          <%= f.number_field :cost_per_night_lteq, :min => 0, autocomplete: "off", class: "form-control" %>
+        </div>
       </div>
         <%= f.label :type_of_room_eq, "Type of room:" %>
         <%= f.select :type_of_room_eq, options_for_select([["Homestay", 0], ["Hotel", 1]], params[:q][:type_of_room_eq]), :include_blank => true, :class=>"form-control" %>
@@ -64,6 +68,10 @@
   <div class="col-md-9 order-md-1">
     <h4 class="mb-3" style="font-weight: bold; text-overflow: ellipsis; white-space: nowrap;
                 overflow: hidden;">Find Result (<%= @rooms.count %> rooms)</h4>
+                
+    <div class="pagination_container" style="display: inline-block; margin-right: 50px; margin-bottom: 10px;">
+      <%= paginate @rooms, theme: 'twitter-bootstrap-3'%>
+    </div>
     <%= sort_link(@q, :cost_per_night, "Sort by cost") %>
       
     <div class="row">
@@ -72,6 +80,7 @@
           <div class="card " style="width: 100%;">
             <!--<div class="card-body">-->
              <%= link_to image_tag(room.pictures[0], :alt=>'Room image', :width=>"100%", :class => "index-room-img"), room_path(room) %>
+
              <ul class="homepage-info">
                 <p class="right-corner" style="font-size: 1rem; font-weight: bold">$<%= room.cost_per_night %>/night </p>
                 <h5 style="font-weight: bold"><%= room.room_name %></h5>
@@ -102,6 +111,9 @@
         </div>
       <% end %>
   
+    </div>
+    <div class="pagination_container" style="display: inline-block; margin-top: 10px">
+      <%= paginate @rooms, theme: 'twitter-bootstrap-3'%>
     </div>
   </div>
 

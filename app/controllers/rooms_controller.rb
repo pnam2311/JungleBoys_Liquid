@@ -30,7 +30,7 @@ class RoomsController < ApplicationController
 
     def search
         @q = Room.ransack(params[:q])
-        @rooms = @q.result
+      	@rooms = @q.result.page(params[:page]).per 12
     end
     
     def update
