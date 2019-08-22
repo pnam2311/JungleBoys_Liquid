@@ -26,7 +26,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'mysql2'
 gem 'devise'
 gem 'carrierwave', '~> 1.0'
-gem 'mini_magick', '4.8.0'
+gem 'mini_magick', '4.9.5'
 gem 'mini_racer'
 
 # Use jquery as the JavaScript library
