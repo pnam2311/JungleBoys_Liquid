@@ -41,7 +41,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 # add bootstrap
-gem 'bootstrap', '~> 4.1.3'
+gem 'bootstrap', '~> 4.3.1'
 gem 'sprockets-rails', '>= 2.3.2'
 gem "search_cop"
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
